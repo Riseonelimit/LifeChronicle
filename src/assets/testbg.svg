@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 1422 800"><defs><radialGradient id="cccircular-grad" r="50%" cx="50%" cy="50%">
+    <stop offset="15%" stop-color="#b64100" stop-opacity="0.5"></stop>
+    <stop offset="75%" stop-color="hsl(28, 100%, 47%)" stop-opacity="1"></stop>
+     <stop offset="100%" stop-color="#ffd370" stop-opacity="1"></stop>
+   </radialGradient></defs><g fill="url(#cccircular-grad)"><circle r="474" cx="711" cy="0" opacity="0.41"></circle><circle r="434.5" cx="711" cy="0" opacity="0.56"></circle><circle r="395" cx="711" cy="0" opacity="0.34"></circle><circle r="355.5" cx="711" cy="0" opacity="0.72"></circle><circle r="316" cx="711" cy="0" opacity="0.84"></circle><circle r="276.5" cx="711" cy="0" opacity="0.39"></circle><circle r="237" cx="711" cy="0" opacity="0.21"></circle><circle r="197.5" cx="711" cy="0" opacity="0.55"></circle><circle r="158" cx="711" cy="0" opacity="0.75"></circle><circle r="118.5" cx="711" cy="0" opacity="0.63"></circle><circle r="79" cx="711" cy="0" opacity="0.12"></circle></g></svg>

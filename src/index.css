@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+  ::selection {
+    color: white ;
+    background-color: rgb(255, 179, 38);
+  }
+  ::-webkit-scrollbar {
+    width: 5px;
+
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #31313093;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #fd6836;
+    border-radius: 20px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ffaf2e;
+  }
+
+
+  @layer base {
+    html {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+  }
+  @layer components {
+    .flex-box {
+      @apply flex justify-center items-center;
+    }
+    .inter {
+      font-family: 'Inter', sans-serif;
+    }
+    .ar-sans{
+      font-family: 'AR One Sans', sans-serif;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .c-stroke{
+      text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+    .test{
+      @apply border-2 border-green-400
+    }
+    .flex-container {
+      @apply flex justify-center items-center flex-col gap-2
+    }
+  }

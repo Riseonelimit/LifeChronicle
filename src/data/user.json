@@ -1,0 +1,84 @@
+[
+    {
+        "first_name": "Jessy",
+        "last_name": "Dible",
+        "age": 40,
+        "email": "jdible0@virginia.edu",
+        "username": "jdible0",
+        "gender": "Polygender",
+        "liked_post":[1,2,3,4] 
+    },
+    {
+        "first_name": "Inesita",
+        "last_name": "Reavell",
+        "age": 53,
+        "email": "ireavell1@buzzfeed.com",
+        "username": "ireavell1",
+        "gender": "Female"
+    },
+    {
+        "first_name": "Rabbi",
+        "last_name": "Corssen",
+        "age": 66,
+        "email": "rcorssen2@newyorker.com",
+        "username": "rcorssen2",
+        "gender": "Male",
+        "liked_post":[1,2,3,4]
+    },
+    {
+        "first_name": "Leroi",
+        "last_name": "Schachter",
+        "age": 48,
+        "email": "lschachter3@drupal.org",
+        "username": "lschachter3",
+        "gender": "Male"
+    },
+    {
+        "first_name": "Arin",
+        "last_name": "Alloway",
+        "age": 48,
+        "email": "aalloway4@infoseek.co.jp",
+        "username": "aalloway4",
+        "gender": "Male"
+    },
+    {
+        "first_name": "Page",
+        "last_name": "MacKeeg",
+        "age": 25,
+        "email": "pmackeeg5@phoca.cz",
+        "username": "pmackeeg5",
+        "gender": "Female"
+    },
+    {
+        "first_name": "Tadio",
+        "last_name": "Hurll",
+        "age": 72,
+        "email": "thurll6@biglobe.ne.jp",
+        "username": "thurll6",
+        "gender": "Non-binary"
+    },
+    {
+        "first_name": "Zebedee",
+        "last_name": "Creak",
+        "age": 79,
+        "email": "zcreak7@ucoz.com",
+        "username": "zcreak7",
+        "gender": "Male"
+    },
+    {
+        "first_name": "Joanna",
+        "last_name": "McIlvoray",
+        "age": 56,
+        "email": "jmcilvoray8@nsw.gov.au",
+        "username": "jmcilvoray8",
+        "gender": "Female"
+    },
+    {
+        "first_name": "Frederica",
+        "last_name": "Quan",
+        "age": 71,
+        "email": "fquan9@dion.ne.jp",
+        "username": "fquan9",
+        "gender": "Female"
+    }
+]

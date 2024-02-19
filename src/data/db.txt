@@ -1,0 +1,100 @@
+=====================================================================
+Users:
+=====================================================================
+
+{
+    "user_id":1 (AUTO INCREMENT)
+    "name": "Jessy",
+    "age": 40,
+    "email": "jdible0@virginia.edu",
+    "username": "jdible0",
+    "gender": "Polygender",
+    "is_challenge_started": false
+    "is_admin":false
+    "completed_days":
+},
+
+
+
+
+=====================================================================
+Admin:
+=====================================================================
+
+{
+    "admin_id":1 (AUTO INCREMENT)
+    "user_id":1
+}
+
+
+
+
+
+=====================================================================
+Liked Posts:
+=====================================================================
+
+{
+    "note_id":1
+    "user_id":1
+}
+
+
+
+
+
+
+=====================================================================
+Note/Blog (Day):
+=====================================================================
+
+{
+    "note_id":1 (AUTO INCREMENT)
+    "user_id": "Maggy Agastina",
+    "day_no": (1-100)
+    "title": "Ms",
+    "publish_date": "9/21/2015",
+    "content": "Phasellus in felis. Donec semper sapien a libero. Nam dui.",
+    "likes_count": 1
+    "comments": [1,2,3,4], (COMMENTS ID)
+    "featured_image":
+    "is_day_completed":false
+},
+
+-- REFACTOR THIS LINK THIS AS A SLUG
+http://localhost:5173/explore/username?day=14
+
+**CHECK THE TIME AT 00:00 EACH DAY AND IF THE "is_day_completed" is false after 00:00 then challenge is lost | else create a new NOTE with Next Day**
+
+
+
+
+=====================================================================
+Comments:
+=====================================================================
+
+{
+    "comment_id": 1, (AUTO INCREMENT)
+    "note_id: 1
+    "user_id": 1,
+    "comment_text": " ",
+    "comment_date": "9/13/2021",
+    "is_flagged": false,
+    "reported_by": "user3"
+},
+
+
+
+
+
+
+=====================================================================
+Notes Media:
+=====================================================================
+
+{
+    "media_id":1 (AUTO INCREMENT)
+    "note_id":1,
+    "media_1":text,
+    "media_2":text,
+}
