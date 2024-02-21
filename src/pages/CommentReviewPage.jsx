@@ -35,7 +35,7 @@ const CommentReviewPage = ({}) => {
             loading ?
             "Loading"
             :
-            reviewComments.map(commentData => {
+            reviewComments?.map(commentData => {
                 return <ReviewComment key={commentData.review_id} commentData={commentData}/>
             })
         }

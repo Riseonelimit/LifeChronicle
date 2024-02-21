@@ -20,6 +20,10 @@ const NotePage = () => {
 
     const [loading, setLoading] = useLoading(true);
 
+
+    // TODO: Make a api req -> fetch all the day_no from the DB
+    //* DB -> check the day-complete bool value and make the query
+
     useEffect(() => {
         setLoading(true);
         const getNoteUserData = async (userslug) => {

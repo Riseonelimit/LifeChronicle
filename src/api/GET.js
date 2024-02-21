@@ -83,7 +83,7 @@ export const getCommentReviewData = async(token)=>{
             }
             );
             
-            return responseData.data;
+            return responseData;
     }
     catch(e){
         console.log(e);

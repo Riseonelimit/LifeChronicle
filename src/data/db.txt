@@ -58,7 +58,7 @@ Note/Blog (Day):
     "likes_count": 1
     "comments": [1,2,3,4], (COMMENTS ID)
     "featured_image":
-    "is_day_completed":false
+    "is_day_completed":false (NO USES)
 },
 
 -- REFACTOR THIS LINK THIS AS A SLUG

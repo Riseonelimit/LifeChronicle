@@ -11,7 +11,7 @@ import SearchNotes from "../components/[Explore]/SearchNotes";
 const Explore = () => {
     const [notes, setNotes] = useState([]);
 
-    const { ref, inView, entry } = useInView({ rootMargin: "150px" });
+    const { ref, inView, entry } = useInView({ rootMargin: "250px" });
 
     const initialPage = useRef(0);
 
@@ -61,7 +61,7 @@ const Explore = () => {
 
             {/* SEARCH SECTION */}
             <div
-                className={` w-full lg:h-full flex-box flex-col relative justify-between gap-5 lg:col-span-1 rounded-[25px] p-7 z-10`}
+                className={` w-full lg:h-full flex-box flex-col relative justify-start gap-5 lg:col-span-1 rounded-[25px] p-7 z-10`}
             >
               
                 <SearchNotes/>

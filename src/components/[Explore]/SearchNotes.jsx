@@ -64,7 +64,7 @@ const SearchNotes = () => {
                     </button>
                 </div>
             </div>
-            <div className=" max-h-[28rem] w-full flex-box flex-col justify-start gap-2 no-scrollbar overflow-y-auto">
+            <div className="max-h-[33rem] w-full flex-box flex-col justify-start gap-2 no-scrollbar overflow-y-auto">
                 
                 {result
                     ? result.map((note) => {
