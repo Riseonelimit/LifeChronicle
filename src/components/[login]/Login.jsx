@@ -2,12 +2,15 @@ import React, { useEffect, useState } from "react";
 import { Form, useNavigate } from "react-router-dom";
 
 import { USER } from "../../reducer/userReducer";
-import { useUser, useUserDispatch } from "../../hooks/customHook";
+import { useTheme, useUser, useUserDispatch } from "../../hooks/customHook";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { login } from "../../api/auth/AUTH";
-import { checkDayExpiry } from "../../utils/helpers";
+import { checkDayExpiry, validateFormInput } from "../../utils/helpers";
 import LoginRedirect from "../utils/LoginRedirect";
 import Banner from "../utils/Banner";
 import Label from "../form/Label";
+
 import FormInput from "../form/FormInput";
 
 const Login = () => {
@@ -18,6 +21,7 @@ const Login = () => {
 
     const userDispatch = useUserDispatch();
     const user = useUser();
+    const theme = useTheme();
 
     useEffect(() => {
         check();
@@ -31,13 +35,21 @@ const Login = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
 
+        const { isValid, message } = validateFormInput(email, password);
+
+        if (!isValid) {
+            toast.warn(message,{
+                theme:theme == "dark" ? "dark" : "light"
+            });
+            return;
+        }
+
+
         const data = {
             email: email,
             password: password,
         };
-
         const res = await login(data);
-        console.log(res);
 
         if (res != null) {
             localStorage.setItem("token", res.token);
@@ -66,7 +78,7 @@ const Login = () => {
                         <Label>Email</Label>
 
                         <FormInput
-                            type="text"
+                            type="email"
                             name="email"
                             value={email}
                             onChange={(e) => {
@@ -95,10 +107,11 @@ const Login = () => {
                         LogIn
                     </button>
                     <LoginRedirect to={"/signup"} redirectText={"SignIn"}>
-                        Not a User?
+                        Not a User?&nbsp;
                     </LoginRedirect>
                 </Form>
             </div>
+
         </section>
     );
 };

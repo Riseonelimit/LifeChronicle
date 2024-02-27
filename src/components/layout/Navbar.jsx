@@ -9,11 +9,12 @@ import { Data } from "../../context/DataContext";
 import { USER } from "../../reducer/userReducer";
 
 const Navbar = () => {
-    const [theme, setTheme] = useState("light");
+    const context = useContext(Data);
+    const theme = context.THEME 
+    const setTheme = context.SET_THEME 
 
     const [isExtended, setIsExtended] = useState(false);
 
-    const context = useContext(Data);
     const { pathname } = useLocation();
     const navigate = useNavigate();
 
@@ -81,7 +82,7 @@ const Navbar = () => {
                 {!context.USER.isAuth ? (
                     <div className="flex-box gap-2 lg:gap-5">
                         <button
-                            className=" p-2 bg-orange-200 dark:bg-orange-500 group rounded-full"
+                            className=" p-2 bg-orange-200  dark:bg-orange-500 group rounded-full"
                             onClick={themeSwitch}
                         >
                             {theme == "light" ? (

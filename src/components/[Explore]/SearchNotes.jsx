@@ -9,27 +9,24 @@ const SearchNotes = () => {
     const [searchValue, setSearchValue] = useState("");
     const [result, setResult] = useState(null);
 
+    const [loading, setLoading] = useLoading(false);
 
-    const [loading,setLoading] = useLoading(false)
+    const debouncedValue = useDebounce(searchValue, 500);
 
-    const debouncedValue = useDebounce(searchValue,500);
-
-    useEffect(()=>{
+    useEffect(() => {
         const searchNotes = async () => {
-            setLoading(true)
-            if(debouncedValue == ""){
-                setResult(null)
-                return 
+            setLoading(true);
+            if (debouncedValue == "") {
+                setResult(null);
+                return;
             }
             const notes = await getNoteByTitle(debouncedValue);
-            setResult(notes)
+            setResult(notes);
 
             setLoading(false);
-        }
-        searchNotes()
-
-    },[debouncedValue])
-
+        };
+        searchNotes();
+    }, [debouncedValue]);
 
     return (
         <>
@@ -65,11 +62,18 @@ const SearchNotes = () => {
                 </div>
             </div>
             <div className="max-h-[33rem] w-full flex-box flex-col justify-start gap-2 no-scrollbar overflow-y-auto">
-                
                 {result
                     ? result.map((note) => {
-                          return <Link to={`/explore/${note.user_slug}/${note.day_no}`} className=" w-full px-4 py-5  rounded-2xl dark:bg-[#212121a6] bg-[#ecececa6] shadow-md text-rose-500 font-semibold  text-lg">
-                            {note.title}</Link>;
+                          return (
+                              <Link
+                                  to={`/explore/${note.user_slug}/${note.day_no}`}
+                                  className=" w-full px-4 py-5  rounded-2xl dark:bg-[#212121a6] bg-[#ecececa6] shadow-md font-semibold  text-lg"
+                              >
+                                  <h1 className=" bg-gradient-to-tl dark:from-rose-400 dark:to-orange-600  from-red-400 to-orange-400  text-transparent bg-clip-text">
+                                      {note.title}
+                                  </h1>
+                              </Link>
+                          );
                       })
                     : null}
             </div>

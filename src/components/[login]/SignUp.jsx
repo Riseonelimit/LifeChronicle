@@ -3,11 +3,13 @@ import { Form, redirect, useNavigate } from "react-router-dom";
 
 import DataContext, { Data } from "../../context/DataContext";
 import { USER } from "../../reducer/userReducer";
-import { useUser, useUserDispatch } from "../../hooks/customHook";
+import { useTheme, useUser, useUserDispatch } from "../../hooks/customHook";
 import LoginRedirect from "../utils/LoginRedirect";
 import Banner from "../utils/Banner";
 import Label from "../form/Label";
 import FormInput from "../form/FormInput";
+import { validateFormInput } from "../../utils/helpers";
+import { toast } from "react-toastify";
 
 const SignUp = () => {
     const [name, setName] = useState("");
@@ -18,12 +20,21 @@ const SignUp = () => {
     const navigate = useNavigate();
 
     const user = useUser();
+    const theme = useTheme();
+
     const userDispatch = useUserDispatch();
 
     const handleSignUp = async (e) => {
         e.preventDefault();
 
-        //VALIDATION REMAINS
+        const { isValid, message } = validateFormInput(email, password, age);
+
+        if (!isValid) {
+            toast.warn(message,{
+                theme:theme == "dark" ? "dark" : "light"
+            });
+            return;
+        }
 
         const data = {
             name: name,
@@ -62,7 +73,7 @@ const SignUp = () => {
                     <div className=" w-3/4 flex-box gap-2 flex-col items-start">
                         <Label>Age</Label>
                         <FormInput
-                            type={"text"}
+                            type={"number"}
                             name={"age"}
                             value={age}
                             onChange={(e) => {
@@ -104,7 +115,7 @@ const SignUp = () => {
                         Submit
                     </button>
                     <LoginRedirect to={"/login"} redirectText={"Login"}>
-                        Not a User?
+                        Already a User?&nbsp;
                     </LoginRedirect>
                 </Form>
             </div>

@@ -15,6 +15,9 @@ export const useUserDispatch = ()=>{
 export const useUser = ()=>{
     return userContext().USER;
 }
+export const useTheme = ()=>{
+    return userContext().THEME;
+}
 export const useSetLoading = ()=>{
     return userContext().SET_LOADING;
 }

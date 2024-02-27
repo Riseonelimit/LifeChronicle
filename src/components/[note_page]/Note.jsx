@@ -6,12 +6,12 @@ const Note = ({noteData}) => {
 
   return (
     <>
-        <h1 className=" md:text-[1.5rem] lg:text-[3rem] inter font-[400] bg-gradient-to-tl dark:from-red-600 dark:to-orange-400  from-yellow-400 to-orange-400  text-transparent bg-clip-text ">
+        <h1    className=" text-[2rem] md:text-[1.5rem] lg:text-[3rem]  inter font-[400] bg-gradient-to-tl dark:from-red-600 dark:to-orange-400  from-yellow-400 to-orange-400  text-transparent bg-clip-text ">
               {noteData? noteData.title : `Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Cupiditate, architecto`}
             </h1>
-            <div className="flex-container gap-5 w-full self-center h-full mt-5 overflow-y-auto  ">
-              <p className="  md:text-[0.7rem] lg:text-[1.2rem] leading-[2.5em] md:font-extralight lg:font-normal  dark:text-slate-200  w-full h-full cont">
+            <div   className="flex-container gap-5 w-full self-center h-full mt-5 overflow-y-auto  ">
+              <p className=" text-[0.8rem]  md:text-[0.7rem] lg:text-[1.2rem] leading-[2.5em] md:font-extralight lg:font-normal  dark:text-slate-200  w-full h-full cont">
                 
                 {noteData? parse(noteData.content) :
 

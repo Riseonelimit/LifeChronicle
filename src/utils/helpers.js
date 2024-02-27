@@ -25,3 +25,27 @@ export const checkDayExpiry = async (userDayTimer,userData,token)=>{
 export const getToken = (tokenName)=>{
   return localStorage.getItem(tokenName);
 }
+
+
+export const validateFormInput = (email,password,age)=>{
+
+  const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+  const passwordRegex = /^(?=[^\\/`]*[0-9])(?=[^\\/`]*[a-z])(?=[^\\/`]*[A-Z])(?=[^\\/`]*[a-zA-Z])[^\\/`]{8,}$/g;
+
+  if([email,password,+age].some(e=> e == undefined || e == null || e == "")){
+    return {isValid:false,message:"Fields must not be empty"} 
+  }
+  
+  if(!emailRegex.test(email)){
+    return {isValid:false,message:"Incorrect Email format"} 
+  }
+  if(!passwordRegex.test(password)){
+    return {isValid:false,message:"Incorrect Password format"} 
+  }
+  if(age < 0 || age > 120){
+    return {isValid:false,message:"Invalid Age"} 
+  }
+  
+  return {isValid:true,message:""} 
+  
+}

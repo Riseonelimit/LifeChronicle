@@ -117,9 +117,6 @@ const AddNote = () => {
               <div className=' w-full h-[60%] flex'>
               <ReactQuill theme='snow' value={noteData.content} id="content" onChange={(e)=>setNoteData({...noteData,content:e})} className='w-full h-full [&_.ql-toolbar]:bg-white  ' />
               </div>
-
-              {noteData.content}
-              {noteData.title}
               <button onClick={e=>handleCompleteDay(e)} className=' mt-14 p-3 bg-gradient-to-tl dark:from-red-600 dark:to-orange-400  from-yellow-400 to-orange-400  rounded-2xl font-semibold'>Complete Day</button>
             </Form>
           </div>

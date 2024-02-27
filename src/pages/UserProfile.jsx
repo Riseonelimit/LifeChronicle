@@ -93,10 +93,6 @@ const UserProfile = () => {
                                 <h1 className=" text-3xl font-semibold dark:text-orange-200 ">
                                     {user.username}
                                 </h1>
-                                <button className=" p-2 flex-box gap-1 bg-orange-900  group-hover:visible  text-orange-200 text-[0.7rem]  rounded-lg">
-                                    <GoPencil size={15} />
-                                    Change Username
-                                </button>
                             </div>
                         </UserProfileInfo>
 
@@ -125,7 +121,7 @@ const UserProfile = () => {
                         <SmallTitle text={"Current Day"} />
                         <UserProfileInfo>
                             <h1 className=" text-3xl font-semibold dark:text-orange-200 ">
-                                {user.current_day}
+                                {user.is_challenge_started? user.current_day : 0}
                             </h1>
                         </UserProfileInfo>
 
@@ -133,7 +129,7 @@ const UserProfile = () => {
                         <SmallTitle text={"Completed Days"} />
                         <UserProfileInfo>
                             <h1 className=" text-3xl font-semibold dark:text-orange-200 ">
-                                {user.completed_days}
+                                {user.is_challenge_started ? user.completed_days : 0}
                             </h1>
                         </UserProfileInfo>
 
@@ -141,7 +137,13 @@ const UserProfile = () => {
                         <SmallTitle text={"Next Day In"} />
                         <UserProfileInfo>
                             <h1 className=" text-3xl font-semibold dark:text-orange-200 ">
-                                <RemainingTime />
+                                {
+                                    user.is_challenge_started?
+                                    <RemainingTime />
+                                    :
+                                    "No Stat"
+
+                                }
                             </h1>
                         </UserProfileInfo>
                     </div>

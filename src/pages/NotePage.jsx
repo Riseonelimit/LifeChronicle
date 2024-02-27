@@ -52,7 +52,7 @@ const NotePage = () => {
     }
 
     return (
-        <section className="grid relative grid-cols-8 w-full h-[90vh] flex-col p-5">
+        <section className="  md:grid lg:grid relative grid-cols-8 w-full md:h-[90vh] lg:h-[90vh] lg:p-5">
             <NotePageSidebar/>
             <NoteContent  />
 

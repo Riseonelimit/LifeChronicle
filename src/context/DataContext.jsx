@@ -7,6 +7,7 @@ export const Data = createContext();
 
 const DataContext = (props) => {
 
+    const [theme, setTheme] = useState("light")
     const [user,userDispatch] = useReducer(userReducer,userInitialState)
     const [noteData,noteDataDispatch] = useReducer(noteDataReducer,noteInitialState)
 
@@ -14,6 +15,8 @@ const DataContext = (props) => {
 
     return (
         <Data.Provider value={{
+            THEME:theme,
+            SET_THEME:setTheme,
             USER:user,
             USER_DISPATCHER:userDispatch,
             NOTE_DATA:noteData,

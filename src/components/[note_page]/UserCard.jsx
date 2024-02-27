@@ -6,7 +6,7 @@ const UserCard = ({ setIsCommentBox,setImageBox,noteUserData,isNoteData}) => {
 
   // console.log(noteUserData);
   return (
-    <div className=" w-full flex-box">
+    <div className="  w-full flex-box">
       <div className=" min-w-[60%] dark:bg-[#0f0e0e88] bg-[#ffffffcb] backdrop-blur-md drop-shadow-md p-[1.5em] row-span-1 rounded-[2em] flex-box flex-col justify-evenly gap-5 ">
         <h1 className=" self-start md:text-md lg:text-2xl inter font-[600] bg-gradient-to-tl dark:from-orange-600 dark:to-yellow-400  from-orange-500 to-orange-400  text-transparent bg-clip-text drop-shadow-sm">
           Posted By
@@ -19,7 +19,7 @@ const UserCard = ({ setIsCommentBox,setImageBox,noteUserData,isNoteData}) => {
             <img
               src={`data:image/svg+xml;base64,${noteUserData.profile_img}`}
               alt=""
-              className="w-full h-full select-none"
+              className="w-[40%] lg:w-full h-full select-none"
               draggable="false"
             />
           </div>

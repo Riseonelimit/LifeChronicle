@@ -1,8 +1,7 @@
 import React, { useContext, useState } from "react";
-import { Form, redirect, useNavigate } from "react-router-dom";
+import { Form, useNavigate } from "react-router-dom";
 
-import bg from "../../assets/NoteBlur.svg";
-import DataContext, { Data } from "../../context/DataContext";
+import { Data } from "../../context/DataContext";
 import { USER } from "../../reducer/userReducer";
 
 import imageData from "../../data/imageSelector.json";
@@ -26,7 +25,7 @@ const ImageSelector = () => {
         e.preventDefault();
 
         // console.log(password);
-
+        
         const data = {
             ...context.USER,
             username: username,

@@ -59,7 +59,7 @@ const NoteContent = () => {
         return <Loading />;
     }
     return (
-        <div className="h-full self-start w-full col-span-6 p-3 z-10 overflow-hidden ">
+        <div className="h-full self-start w-full col-span-6 p-3 z-10 overflow-hidden">
             {!day || noteData.noteData == null ? (
                 <div className="w-full h-full flex-box relative gap-5 p-10 dark:bg-[#15131390] bg-[#ffffff2a] drop-shadow-md backdrop-blur-md rounded-[25px]">
                     {noteData.noteData == null || false ? (
@@ -70,7 +70,7 @@ const NoteContent = () => {
                                 className=" w-[15rem] object-cover"
                             ></img>
                             <h1
-                                className="  text-5xl font-semibold bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-orange-300 via-rose-500 to-orange-500 dark:from-orange-400 dark:via-red-300 dark:to-rose-500 text-transparent 
+                                className=" text-5xl font-semibold bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-orange-300 via-rose-500 to-orange-500 dark:from-orange-400 dark:via-red-300 dark:to-rose-500 text-transparent 
                             bg-clip-text"
                             >
                                 {noteData?.userInfo?.name} was unable complete
@@ -87,21 +87,20 @@ const NoteContent = () => {
                     )}
                 </div>
             ) : (
-                <div className="w-full h-full grid md:grid-cols-6 lg:grid-cols-4 relative gap-5 p-10 dark:bg-[#15131390] bg-[#ffffff2a] drop-shadow-md backdrop-blur-md rounded-[25px]  ">
-                    <div className=" md:col-span-2 lg:col-span-1 flex items-center justify-start overflow-hidden  flex-col gap-5 h-full w-full">
-                        <h1 className=" text-md md:text-4xl lg:text-8xl leading-tight font-[300] inter self-start  bg-gradient-to-tl dark:from-red-800 dark:to-rose-500  from-orange-400 to-rose-500 text-transparent bg-clip-text  ">
+                <div className="w-full h-full md:grid lg:grid md:grid-cols-6 lg:grid-cols-4 relative gap-5 p-5 lg:p-10 dark:bg-[#15131390] bg-[#ffffff2a] drop-shadow-md backdrop-blur-md rounded-[25px]  ">
+                    <div className=" md:col-span-2 lg:col-span-1 flex   lg:flex-col items-center justify-start overflow-hidden gap-5 h-full w-full">
+                        <h1 className=" text-6xl  md:text-4xl lg:text-8xl leading-tight font-[300] inter self-start  bg-gradient-to-tl dark:from-red-800 dark:to-rose-500  from-orange-400 to-rose-500 text-transparent bg-clip-text  ">
                             Day <br /> {day}
                         </h1>
 
-                        <div className="flex flex-col gap-5 w-full h-full overflow-hidden mt-6">
+                        <div className="flex flex-col gap-5 w-full h-[20rem] lg:h-full self-start lg:self-auto overflow-hidden mt-6">
                             <div className="flex-box self-start gap-3  ">
                                 <hr className=" md:w-[15px] lg:w-[32px] md:h-[3px] lg:h-1 group-hover:w-[70%]  duration-500 drop-shadow-md outline-none  rounded-[20px] border-none  bg-gradient-to-r from-orange-400 to-orange-600" />
                                 <h1 className=" md:text-md lg:text-2xl inter font-[600] bg-gradient-to-tl dark:from-red-600 dark:to-orange-400  from-yellow-400 to-orange-400  text-transparent bg-clip-text drop-shadow-sm">
                                     Comments
                                 </h1>
                             </div>
-                            <div className="flex flex-col gap-5 w-full mt-6  h-full overflow-y-scroll no-scrollbar">
-                                <Comments />
+                            <div className="flex flex-col gap-5 w-full mt-6 h-full overflow-y-scroll no-scrollbar">
                                 {noteData["comments"] != null
                                     ? noteData["comments"]
                                           .filter((e) => e.isPositive != 0)
@@ -115,12 +114,12 @@ const NoteContent = () => {
                                                   />
                                               );
                                           })
-                                    : null}
+                                    : "No Comments"}
                             </div>
                         </div>
                     </div>
 
-                    <div className=" md:col-span-4 lg:col-span-3 overflow-hidden flex flex-col gap-5 p-5  ">
+                    <div className=" md:col-span-4 lg:col-span-3  overflow-hidden flex flex-col  gap-5 p-5  ">
                         <Note noteData={noteData["noteData"]} />
                     </div>
                 </div>
